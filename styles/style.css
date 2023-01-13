@@ -29,7 +29,7 @@ h1 {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 800;
-  font-size: 5.5rem;
+  font-size: 5.4rem;
   line-height: 7rem;
   color: var(--main-black);
   text-transform: uppercase;
@@ -291,7 +291,7 @@ hr {
 
 @media screen and (max-width: 1200px) {
   .main-title {
-    font-size: 7vw;
+    font-size: 6.5vw;
   }
 }
 
