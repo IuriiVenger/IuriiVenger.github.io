@@ -156,6 +156,8 @@ p {
 .main-info-wrapper {
   flex-shrink: 0;
   animation: leftAnim 1s ease 0s 1 normal forwards;
+  -webkit-animation: leftAnim 1s ease 0s 1 normal forwards;
+  
 }
 
 .main-title--mobile,
@@ -322,6 +324,7 @@ p {
   align-items: flex-start;
   width: 100%;
   animation: rightAnim 1s ease 0s 1 normal forwards;
+  -webkit-animation: rightAnim 1s ease 0s 1 normal forwards;
 }
 
 .main-description {
