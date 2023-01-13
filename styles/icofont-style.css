@@ -1,17 +1,17 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?j94ot5');
-  src:  url('../fonts/icomoon.eot?j94ot5#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?j94ot5') format('truetype'),
-    url('../fonts/icomoon.woff?j94ot5') format('woff'),
-    url('../fonts/icomoon.svg?j94ot5#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?ij9vwm');
+  src:  url('../fonts/icomoon.eot?ij9vwm#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ij9vwm') format('truetype'),
+    url('../fonts/icomoon.woff?ij9vwm') format('woff'),
+    url('../fonts/icomoon.svg?ij9vwm#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"]::before,
-[class*=" icon-"] ::before  {
+[class^='icon-']::before,
+[class*=' icon-'] ::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   font-style: normal;
@@ -26,26 +26,26 @@
 }
 
 .icon-car:before {
-  content: "\e900";
+  content: '\e900';
 }
 .icon-running:before {
-  content: "\e901";
+  content: '\e901';
 }
 .icon-skiing:before {
-  content: "\e902";
+  content: '\e902';
 }
-.icon-whatsapp:before {
-  content: "\e903";
-}
-.icon-telegram:before {
-  content: "\e904";
-}
-.icon-location:before {
-  content: "\e947";
-}
-.icon-airplane:before {
-  content: "\e9af";
+.icon-github:before {
+  content: '\e903';
 }
 .icon-mail:before {
-  content: "\ea83";
+  content: '\e945';
+}
+.icon-location:before {
+  content: '\e947';
+}
+.icon-airplane:before {
+  content: '\e9af';
+}
+.icon-telegram:before {
+  content: '\ea95';
 }

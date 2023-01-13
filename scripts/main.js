@@ -1,34 +1,67 @@
 const backArrow = document.querySelector('.back-arrow');
 const forwardArrow = document.querySelector('.forward-arrow');
 const photos = document.querySelectorAll('.photos__item');
+const photosWrapper = document.querySelector('.photos');
 
-let currentPhoto = 0;
+let activePhoto = 0;
 
-const changeVisiblity = (photos, activePhoto) => {
+const touchPosition = {
+  start: 0,
+  end: 0,
+};
+
+const onTouchMoving = e => {
+  touchPosition.end = e.touches[0].pageX;
+};
+
+const onTouchEnded = e => {
+  touchPosition.end > touchPosition.start+50 && increaseSlide(e);
+  touchPosition.end < touchPosition.start-50 && decreaseSlide(e);
+  touchPosition.start = 0;
+  touchPosition.end = 0;
+  photosWrapper.removeEventListener('touchmove', onTouchMoving);
+  photosWrapper.removeEventListener('touchend', onTouchEnded);
+};
+
+const onTouchStarted = e => {
+  if (e.target.className.search('arrow') === -1 ) {
+    touchPosition.start = e.touches[0].pageX;
+    photosWrapper.addEventListener('touchmove', onTouchMoving);
+    photosWrapper.addEventListener('touchend', onTouchEnded);
+  }
+};
+
+const changeActivePhoto = (photos, activePhoto) => {
+  clearInterval(autoChangePhoto)
   photos.forEach((photo, index) => {
     photo.style = `opacity: ${index === activePhoto ? '1' : '0'}`;
   });
-}
+  autoChangePhoto = setInterval(increaseSlide, 5000)
+};
 
 const increaseSlide = () => {
-  if (currentPhoto  < photos.length -1 ) {
-    currentPhoto ++;
+  console.log(photos.length)
+  if (activePhoto < photos.length - 1) {
+    activePhoto++;
   } else {
-    currentPhoto = 0;
+    activePhoto = 0;
   }
 
-  changeVisiblity(photos, currentPhoto)
+  changeActivePhoto(photos, activePhoto);
 };
 
 const decreaseSlide = () => {
-  if (currentPhoto  > 0 ) {
-    currentPhoto --;
+  if (activePhoto > 0) {
+    activePhoto--;
   } else {
-    currentPhoto = photos.length-1;
+    activePhoto = photos.length - 1;
   }
 
-  changeVisiblity(photos, currentPhoto)
+  changeActivePhoto(photos, activePhoto);
 };
+
+let autoChangePhoto = setInterval(increaseSlide, 5000)
 
 backArrow.addEventListener('click', decreaseSlide);
 forwardArrow.addEventListener('click', increaseSlide);
+photosWrapper.addEventListener('touchstart', onTouchStarted, false);
