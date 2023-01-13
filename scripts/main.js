@@ -15,8 +15,8 @@ const onTouchMoving = e => {
 };
 
 const onTouchEnded = e => {
-  touchPosition.end > touchPosition.start+50 && increaseSlide(e);
-  touchPosition.end < touchPosition.start-50 && decreaseSlide(e);
+  touchPosition.end > touchPosition.start+50 && decreaseSlide(e);
+  touchPosition.end < touchPosition.start-50 && increaseSlide(e);
   touchPosition.start = 0;
   touchPosition.end = 0;
   photosWrapper.removeEventListener('touchmove', onTouchMoving);
