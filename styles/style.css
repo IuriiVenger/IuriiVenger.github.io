@@ -11,6 +11,10 @@
   --text-black: #333333;
 }
 
+button {
+  height: 50px;
+}
+
 html {
   font-size: 16px;
 }
@@ -119,15 +123,62 @@ p {
   flex-shrink: 0;
 }
 
-.main-title--mobile, .main-subtitle--mobile {
+.main-title--mobile,
+.main-subtitle--mobile {
   display: none;
+  text-shadow: 0px 0px 5px white;
 }
 
-
-.main-photo {
+.photos {
   align-self: flex-start;
   width: 30rem;
   border-radius: 0.5rem;
+  display: grid;
+  overflow: hidden;
+}
+
+.back-arrow,
+.forward-arrow {
+  grid-row: 1;
+  grid-column: 1;
+  width: 10%;
+  z-index: 1;
+  align-self: center;
+  opacity: 0;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.photos:hover .back-arrow,
+.photos:hover .forward-arrow {
+  opacity: 1;
+}
+
+.back-arrow:active,
+.forward-arrow:active {
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+
+.back-arrow:hover,
+.forward-arrow:hover {
+  filter: drop-shadow(0px 0px 2px #fff);
+}
+
+.forward-arrow {
+  justify-self: flex-end;
+}
+
+.photos__item {
+  width: 100%;
+  transition: 0.5s;
+  grid-row: 1;
+  grid-column: 1;
+  opacity: 0;
+}
+
+.photos__item:nth-child(2) {
+  opacity: 1;
 }
 
 .contacts {
@@ -137,6 +188,7 @@ p {
   padding: 1.25rem;
   box-shadow: -1.25rem 1.25rem 0px var(--main-gray);
   background-color: var(--main-yellow);
+  z-index: 1;
 }
 
 .skills-and-hobbies {
@@ -304,7 +356,7 @@ hr {
     min-height: 36vw;
   }
 
-  .main-photo {
+  .photos {
     width: 38vw;
   }
 
@@ -382,10 +434,6 @@ hr {
     font-size: 2rem;
   }
 
-  .skills-item {
-    /* padding: 0.7rem 1.1rem; */
-  }
-
   .experience-info__text {
     width: 95%;
   }
@@ -410,7 +458,7 @@ hr {
   }
 }
 
-@media screen and (max-width: 550px)  {
+@media screen and (max-width: 550px) {
   .main-page {
     flex-direction: column;
     padding: 0;
@@ -421,7 +469,8 @@ hr {
     flex-wrap: wrap;
   }
 
-  .main-title--mobile, .main-subtitle--mobile {
+  .main-title--mobile,
+  .main-subtitle--mobile {
     display: block;
     position: absolute;
     width: 100%;
@@ -429,13 +478,18 @@ hr {
   }
 
   .main-title--mobile {
-    font-size: 10vw;   
-    top: 40vw
+    font-size: 10vw;
+    top: 40vw;
   }
 
   .main-subtitle--mobile {
     font-size: 5vw;
     top: 54vw;
+  }
+
+  .back-arrow,
+  .forward-arrow {
+    opacity: 1;
   }
 
   .contacts {
@@ -456,16 +510,17 @@ hr {
     font-size: 14px;
   }
 
-  .main-info-wrapper h4, .description-title {
+  .main-info-wrapper h4,
+  .description-title {
     font-size: 30px;
   }
-
 
   .description-wrapper {
     padding: 1.5rem;
   }
 
-  .main-title, .main-subtitle {
+  .main-title,
+  .main-subtitle {
     display: none;
   }
 
@@ -473,14 +528,15 @@ hr {
     min-height: auto;
   }
 
-  .description, .main-description .description {
+  .description,
+  .main-description .description {
     padding: 0;
   }
 
-  .main-photo {
+  .photos {
     width: 100vw;
   }
-  
+
   .skills-and-hobbies {
     width: 100vw;
     margin-top: 0;
