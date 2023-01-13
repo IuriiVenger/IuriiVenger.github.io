@@ -67,7 +67,7 @@ h1 {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 800;
-  font-size: 5.4rem;
+  font-size: 5.3rem;
   line-height: 7rem;
   color: var(--main-black);
   text-transform: uppercase;
@@ -156,7 +156,6 @@ p {
 .photos {
   align-self: flex-start;
   width: 30rem;
-  border-radius: 0.5rem;
   display: grid;
   overflow: hidden;
 }
@@ -200,6 +199,7 @@ p {
   grid-row: 1;
   grid-column: 1;
   opacity: 0;
+  border-radius: 0.5rem;
 }
 
 .photos__item.main-photo {
@@ -561,6 +561,7 @@ hr {
     width: 100%;
     box-shadow: 0rem 1.25rem 0px var(--main-gray);
     margin-top: 0;
+    grid-auto-rows: minmax(50px, auto);
   }
 
   .contacts-title__wrapper, .skills-title__wrapper, .hobbies-title__wrapper {
@@ -568,7 +569,7 @@ hr {
   }
 
   .contact-item {
-    font-size: 4.5vw;
+    font-size: 4.8vw;
   }
 
   .main-info-wrapper h4,
