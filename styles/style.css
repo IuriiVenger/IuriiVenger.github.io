@@ -119,7 +119,7 @@ p {
   font-style: normal;
   font-weight: 400;
   font-size: 1.2rem;
-  line-height: 1.4rem;
+  line-height: 1.8rem;
   color: var(--text-black);
 }
 
@@ -406,7 +406,7 @@ hr {
 
 @media screen and (max-width: 1200px) {
   .main-title {
-    font-size: 6.5vw;
+    font-size: 6.3vw;
   }
 }
 
@@ -504,6 +504,7 @@ hr {
 }
 
 @media screen and (max-width: 800px) {
+
   .description-title__wrapper {
     margin-bottom: 0;
   }
@@ -564,6 +565,10 @@ hr {
 
   .contacts-title__wrapper, .skills-title__wrapper, .hobbies-title__wrapper {
     margin-bottom: 20px;
+  }
+
+  .contact-item {
+    font-size: 4.5vw;
   }
 
   .main-info-wrapper h4,
