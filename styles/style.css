@@ -155,7 +155,6 @@ small {
 }
 
 #burger-menu__icon {
-  opacity: 0.8;
   z-index: 2;
   cursor: pointer;
   position: absolute;
