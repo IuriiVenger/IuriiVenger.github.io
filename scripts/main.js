@@ -2,6 +2,8 @@ const backArrow = document.querySelector('.back-arrow');
 const forwardArrow = document.querySelector('.forward-arrow');
 const photos = document.querySelectorAll('.photos__item');
 const photosWrapper = document.querySelector('.photos');
+const burgerMenu = document.getElementById('burger-menu__icon');
+const dropDown = document.querySelector('.header-drop-down');
 
 let activePhoto = 0;
 
@@ -15,8 +17,8 @@ const onTouchMoving = e => {
 };
 
 const onTouchEnded = e => {
-  touchPosition.end > touchPosition.start+50 && decreaseSlide(e);
-  touchPosition.end < touchPosition.start-50 && increaseSlide(e);
+  touchPosition.end > touchPosition.start + 50 && decreaseSlide(e);
+  touchPosition.end < touchPosition.start - 50 && increaseSlide(e);
   touchPosition.start = 0;
   touchPosition.end = 0;
   photosWrapper.removeEventListener('touchmove', onTouchMoving);
@@ -24,7 +26,7 @@ const onTouchEnded = e => {
 };
 
 const onTouchStarted = e => {
-  if (e.target.className.search('arrow') === -1 ) {
+  if (e.target.className.search('arrow') === -1) {
     touchPosition.start = e.touches[0].pageX;
     photosWrapper.addEventListener('touchmove', onTouchMoving);
     photosWrapper.addEventListener('touchend', onTouchEnded);
@@ -32,15 +34,15 @@ const onTouchStarted = e => {
 };
 
 const changeActivePhoto = (photos, activePhoto) => {
-  clearInterval(autoChangePhoto)
+  clearInterval(autoChangePhoto);
   photos.forEach((photo, index) => {
     photo.style = `opacity: ${index === activePhoto ? '1' : '0'}`;
   });
-  autoChangePhoto = setInterval(increaseSlide, 5000)
+  autoChangePhoto = setInterval(increaseSlide, 5000);
 };
 
 const increaseSlide = () => {
-  console.log(photos.length)
+  console.log(photos.length);
   if (activePhoto < photos.length - 1) {
     activePhoto++;
   } else {
@@ -60,8 +62,38 @@ const decreaseSlide = () => {
   changeActivePhoto(photos, activePhoto);
 };
 
-let autoChangePhoto = setInterval(increaseSlide, 5000)
+const changeDropdownVisiblity = e => {
+  e.stopPropagation();
+  dropDown.classList.contains('visible')
+    ? document.removeEventListener('click', clickOutside)
+    : document.addEventListener('click', clickOutside);
+  dropDown.classList.toggle('visible');
+  burgerMenu.classList.toggle('icon-menu');
+  burgerMenu.classList.toggle('icon-close');
+};
 
+const clickOutside = e => {
+  if (e.target.className !== 'header-drop-down visible') {
+    changeDropdownVisiblity(e);
+  }
+};
+
+const addSmoothScroll = () => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth',
+      });
+    });
+  });
+};
+
+let autoChangePhoto = setInterval(increaseSlide, 5000);
+
+addSmoothScroll()
+burgerMenu.addEventListener('click', changeDropdownVisiblity);
 backArrow.addEventListener('click', decreaseSlide);
 forwardArrow.addEventListener('click', increaseSlide);
 photosWrapper.addEventListener('touchstart', onTouchStarted, false);

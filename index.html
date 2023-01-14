@@ -8,46 +8,29 @@
     <title>CV Iurii Venger</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <span class="icon-menu" id="burger-menu__icon"></span>
+      <nav class="header-drop-down">
+        <a href="#education" class="navlink">Education</a>
+        <a href="#skills" class="navlink">Skills</a>
+        <a href="#contacts" class="navlink">Contacts</a>
+        <a href="#experience" class="navlink">Experience</a>
+        <a href="https://github.com/IuriiVenger/IuriiVenger" target="_blank" class="navlink">My projects</a>
+      </nav>
+    </header>
     <main class="main-page">
       <article class="main-info-wrapper">
         <section class="photos" draggable="false">
           <img src="./images/back.svg" class="back-arrow" alt="back-arrow" />
-          <img
-            src="./images/main-photo.jpeg"
-            alt="main-photo"
-            class="photos__item main-photo"
-            draggable="false"
-          />
-          <img
-            src="./images/second-photo.jpg"
-            alt="main-photo"
-            class="photos__item"
-            draggable="false"
-          />
-          <img
-            src="./images/third-photo.jpg"
-            alt="main-photo"
-            class="photos__item"
-            draggable="false"
-          />
-          <img
-            src="./images/fourth-photo.jpg"
-            alt="main-photo"
-            class="photos__item"
-            draggable="false"
-          />
-          <img
-            src="./images/forward.svg"
-            class="forward-arrow"
-            alt="forward-arrow"
-            draggable="false"
-          />
+          <img src="./images/main-photo.jpeg" alt="main-photo" class="photos__item main-photo" draggable="false" />
+          <img src="./images/second-photo.jpg" alt="main-photo" class="photos__item" draggable="false" />
+          <img src="./images/third-photo.jpg" alt="main-photo" class="photos__item" draggable="false" />
+          <img src="./images/fourth-photo.jpg" alt="main-photo" class="photos__item" draggable="false" />
+          <img src="./images/forward.svg" class="forward-arrow" alt="forward-arrow" draggable="false" />
           <h1 class="main-title--mobile">Iurii venger</h1>
           <h3 class="main-subtitle--mobile">Frontend Developer</h3>
         </section>
-
-        <article class="contacts">
+        <article class="contacts" id="contacts">
           <section class="contacts-title__wrapper">
             <h4 class="contacts-title">Contacts</h4>
             <div class="contacts-title__line">
@@ -60,7 +43,7 @@
           <adress class="icon-location contact-item">Montenegro, Herceg-Novi</adress>
         </article>
         <article class="skills-and-hobbies">
-          <article class="skills">
+          <article class="skills" id="skills">
             <section class="skills-title__wrapper">
               <h4 class="skills-title">Skills</h4>
               <div class="skills-title__line">
@@ -111,17 +94,17 @@
               </div>
             </section>
             <p class="description__text">
-              After a successful career from IT Specialist to the youngest Regional Director at the
-              largest CE sales company in Russia, I returned to IT as a FrontEnd Developer.
+              I'm a 33 y.o FrontEnd developer. After a successful career from IT Specialist to the youngest Regional
+              Director at the largest CE sales company in Russia, I returned to IT as a FrontEnd Developer.
             </p>
             <p class="description__text">
-              At the moment i have about 1 year experience in development and i create interfaces
-              and SPAs in TypeScript/Javascript + React.JS
+              At the moment i have about 1 year experience in development and i create interfaces and SPAs in
+              TypeScript/Javascript + React.JS
             </p>
           </article>
         </article>
         <article class="description">
-          <section class="description-title__wrapper">
+          <section class="description-title__wrapper" id="education">
             <h2 class="description-title">Education</h2>
             <div class="description-title__line">
               <hr />
@@ -156,15 +139,14 @@
               <hr />
             </div>
           </section>
-          <article class="experience-info">
+          <article class="experience-info" id="experience">
             <section class="experience-info__title">
               <h5>Frontend Developer</h5>
               <h4>2022 - now</h4>
             </section>
             <p class="experience-info__text">
               Creating SPAs and interfaces.
-              <br />I have created adaptive SPA for psychologist, stack React.JS, Redux, Typescript,
-              SCSS
+              <br />I have created adaptive SPA for psychologist, stack React.JS, Redux, Typescript, SCSS
             </p>
           </article>
           <article class="experience-info">
@@ -173,9 +155,8 @@
               <h4>2008 - 2022</h4>
             </section>
             <p class="experience-info__text">
-              Successful career and team-building in a largest CE company in Russia. Lastest
-              achievements: best regional director in 2021, best dinamics of market share in 2020
-              and 2019 (based on GFK grade) and many other.
+              Successful career and team-building in a largest CE company in Russia. Lastest achievements: best regional
+              director in 2021, best dinamics of market share in 2020 and 2019 (based on GFK grade) and many other.
             </p>
           </article>
         </article>
