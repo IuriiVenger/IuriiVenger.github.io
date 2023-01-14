@@ -114,13 +114,26 @@ h6 {
   line-height: 1.25rem;
 }
 
-p, a {
+p,
+a {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.8rem;
   color: var(--text-black);
+  text-decoration: none;
+}
+
+small {
+  font-family: Open Sans;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.45;
+  color: black;
 }
 
 #burger-menu__icon {
@@ -147,7 +160,6 @@ p, a {
   width: 40px;
   border-radius: 20px;
   display: flex;
-  /* opacity: 1; */
   flex-direction: column;
   background-color: var(--main-gray);
   gap: 20px;
@@ -157,7 +169,7 @@ p, a {
   z-index: 0;
   box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75); 
+  -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .navlink {
@@ -170,7 +182,6 @@ p, a {
   font-weight: 500;
   text-transform: uppercase;
   color: var(--bright-yellow);
-  text-decoration: none;
 }
 
 .navlink:hover {
@@ -218,7 +229,8 @@ p, a {
 
 .photos {
   align-self: flex-start;
-  width: 30rem;
+  width: 38vw;
+  max-width: 30rem;
   display: grid;
   overflow: hidden;
 }
@@ -273,7 +285,8 @@ p, a {
 .contacts {
   margin-top: -6rem;
   align-self: flex-end;
-  width: 28.5rem;
+  width: 36vw;
+  max-width: 28.5rem;
   padding: 1.25rem;
   box-shadow: -1.25rem 1.25rem 0px var(--main-gray);
   background-color: var(--main-yellow);
@@ -297,7 +310,15 @@ p, a {
   align-items: center;
   margin: 2px;
   color: #3c3838;
+  cursor: pointer;
+  transition: 0.2s;
 }
+
+.contact-item:hover {
+  color: var(--dark-violet);
+  scale: 1.01;
+}
+
 .contacts-title__wrapper,
 .contact-item:nth-child(4),
 .contact-item:nth-child(5) {
@@ -322,7 +343,8 @@ p, a {
   flex-direction: column;
   gap: 2rem;
   margin-top: 3rem;
-  width: 36rem;
+  width: 45vw;
+  max-width: 36rem;
   padding: 1.25rem;
   box-shadow: 1.25rem 1.25rem 0px var(--main-yellow);
   background-color: var(--main-gray);
@@ -359,10 +381,13 @@ p, a {
 .skills-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
   row-gap: 1.2rem;
   justify-content: space-between;
   padding: 2.5%;
+
+  width: 92%;
+  align-self: center;
 }
 
 .skills-item {
@@ -380,6 +405,12 @@ p, a {
   text-transform: uppercase;
   color: var(--main-black);
   background-color: var(--bright-yellow);
+
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .hobbies {
@@ -466,79 +497,42 @@ hr {
 }
 
 .experience-info__text {
+  margin-top: 1rem;
   width: 90%;
 }
 
 @media screen and (max-width: 1200px) {
-  .main-title {
-    font-size: 6.3vw;
-  }
-}
-
-@media screen and (max-width: 1100px) {
   html {
     font-size: 14px;
+  }
+
+  .main-title {
+    font-size: 6.3vw;
   }
 
   .main-description {
     min-height: 36vw;
   }
-
-  .photos {
-    width: 38vw;
-  }
-
-  .contacts {
-    width: 36vw;
-  }
-
-  .skills-and-hobbies {
-    width: 45vw;
-  }
-
-  .skills-item {
-    padding: 0.7rem 1.2rem;
-    /* font-size: 10px; */
-  }
 }
 
 @media screen and (max-width: 1000px) {
+  html {
+    font-size: 12px;
+  }
+
   .description-wrapper {
     gap: 30px;
+  }
+
+  .main-title {
+    font-size: 5vw;
+    line-height: 10vw;
   }
 
   .main-subtitle {
     font-size: 1.5rem;
   }
-  .contacts {
-    width: 38vw;
-  }
-  .skills-items {
-    width: 92%;
-    align-self: center;
-  }
 
-  .skills-item {
-    font-size: 12px;
-    font-weight: 600;
-    min-width: 90px;
-    height: 30px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  html {
-    font-size: 12px;
-  }
-
-  h4 {
-    font-size: 1.2rem;
-  }
   .skills-items {
     width: 96%;
   }
@@ -546,39 +540,31 @@ hr {
     width: 90%;
   }
 
-  /* .description-wrapper {
+  .description-wrapper {
     gap: 10px;
-    justify-content: space-between;
-  } */
-
-  .description {
-    gap: 0.5rem;
   }
 
   .description {
-    padding-left: 3rem;
+    gap: 0.5rem;
+    padding-left: 2rem;
   }
 
   .description-title {
     font-size: 2rem;
   }
 
-  .experience-info__text {
-    width: 95%;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .description-title__wrapper {
-    margin-bottom: 0;
-  }
-
   .description__text {
     width: 100%;
   }
 
-  .contacts-title__wrapper {
-    margin-bottom: 0;
+  .experience-info__text {
+    width: 100%;
+  }
+
+  .experience-info__date,
+  .education-info__date {
+    font-size: 1.4rem;
+    flex-shrink: 0;
   }
 }
 
@@ -623,6 +609,7 @@ hr {
   }
 
   .contacts {
+    max-width: 100%;
     width: 100%;
     box-shadow: 0rem 1.25rem 0px var(--main-gray);
     margin-top: 0;
@@ -663,10 +650,12 @@ hr {
   }
 
   .photos {
+    max-width: 100vw;
     width: 100vw;
   }
 
   .skills-and-hobbies {
+    max-width: 100vw;
     width: 100vw;
     margin-top: 0;
     box-shadow: 0rem 1.25rem 0px var(--main-yellow);
