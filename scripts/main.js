@@ -64,10 +64,15 @@ const decreaseSlide = () => {
 
 const changeDropdownVisiblity = e => {
   e.stopPropagation();
-  dropDown.classList.contains('visible')
-    ? document.removeEventListener('click', clickOutside)
-    : document.addEventListener('click', clickOutside);
-  dropDown.classList.toggle('visible');
+  if (dropDown.classList.contains('visible')) {
+    document.removeEventListener('click', clickOutside)
+    dropDown.classList.add('hidden');
+    dropDown.classList.remove('visible');
+  } else {
+    document.addEventListener('click', clickOutside);
+    dropDown.classList.remove('hidden');
+    dropDown.classList.add('visible');
+  }
   burgerMenu.classList.toggle('icon-menu');
   burgerMenu.classList.toggle('icon-close');
 };
