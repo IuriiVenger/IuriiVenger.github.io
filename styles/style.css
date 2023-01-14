@@ -630,6 +630,11 @@ hr {
     padding: 0;
   }
 
+  .icon-menu {
+    font-size: 24px;
+    animation: none;
+  }
+
   .main-info-wrapper,
   .description-wrapper {
     animation: fadeInAnim 2s ease 0s 1 normal forwards;
