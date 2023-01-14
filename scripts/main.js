@@ -38,11 +38,11 @@ const changeActivePhoto = (photos, activePhoto) => {
   photos.forEach((photo, index) => {
     photo.style = `opacity: ${index === activePhoto ? '1' : '0'}`;
   });
+  
   autoChangePhoto = setInterval(increaseSlide, 5000);
 };
 
 const increaseSlide = () => {
-  console.log(photos.length);
   if (activePhoto < photos.length - 1) {
     activePhoto++;
   } else {
@@ -65,7 +65,7 @@ const decreaseSlide = () => {
 const changeDropdownVisiblity = e => {
   e.stopPropagation();
   if (dropDown.classList.contains('visible')) {
-    document.removeEventListener('click', clickOutside)
+    document.removeEventListener('click', clickOutside);
     dropDown.classList.add('hidden');
     dropDown.classList.remove('visible');
   } else {
@@ -87,7 +87,6 @@ const addSmoothScroll = () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-
       document.querySelector(this.getAttribute('href')).scrollIntoView({
         behavior: 'smooth',
       });
@@ -97,7 +96,7 @@ const addSmoothScroll = () => {
 
 let autoChangePhoto = setInterval(increaseSlide, 5000);
 
-addSmoothScroll()
+addSmoothScroll();
 burgerMenu.addEventListener('click', changeDropdownVisiblity);
 backArrow.addEventListener('click', decreaseSlide);
 forwardArrow.addEventListener('click', increaseSlide);
