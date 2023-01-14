@@ -57,16 +57,6 @@
   }
 }
 
-@keyframes swirlInAnim {
-  0% {
-    transform: rotate(-540deg) scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(0) scale(1);
-    opacity: 1;
-  }
-}
 
 @keyframes upOutAnim {
   0% {
@@ -180,7 +170,7 @@ small {
 .icon-close {
   font-size: 18px;
   color: var(--main-bg-color);
-  animation: swirlInAnim 0.6s ease-out 0.4s both;
+  animation: fadeInAnim 0.6s ease-out 0.4s both;
 }
 
 .header-drop-down {
