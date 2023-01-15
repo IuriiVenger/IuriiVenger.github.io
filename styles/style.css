@@ -165,12 +165,14 @@ small {
 .icon-menu {
   font-size: 24px;
   animation: upInAnim 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
+  will-change: transform;
 }
 
 .icon-close {
   font-size: 18px;
   color: var(--main-bg-color);
   animation: fadeInAnim 0.6s ease-out 0.4s both;
+  will-change: transform;
 }
 
 .header-drop-down {
@@ -200,7 +202,7 @@ small {
   width: 300px;
   visibility: visible;
   animation: upInAnim 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
-
+  will-change: transform;
   z-index: 1;
 }
 
@@ -209,6 +211,7 @@ small {
   width: 300px;
   visibility: visible;
   animation: upOutAnim 0.6s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+  will-change: transform;
 }
 
 .navlink {
@@ -250,6 +253,7 @@ small {
   flex-shrink: 0;
   animation: leftInAnim 1s ease 0s 1 normal forwards;
   -webkit-animation: leftInAnim 1s ease 0s 1 normal forwards;
+  will-change: transform;
 }
 
 .main-title--mobile,
@@ -490,6 +494,7 @@ small {
   width: 100%;
   animation: rightInAnim 1s ease 0s 1 normal forwards;
   -webkit-animation: rightInAnim 1s ease 0s 1 normal forwards;
+  will-change: transform;
 }
 
 .main-description {
@@ -638,6 +643,7 @@ hr {
   .main-info-wrapper,
   .description-wrapper {
     animation: fadeInAnim 2s ease 0s 1 normal forwards;
+    will-change: transform;
   }
 
   .main-info-wrapper {
