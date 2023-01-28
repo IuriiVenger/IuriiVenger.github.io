@@ -21,7 +21,8 @@
   100% {
     transform: translate3d(0,0, 0) rotate(0deg);
     filter: blur(0);
-    opacity: 1;
+    opacity: 0.95;
+
   }
 }
 
